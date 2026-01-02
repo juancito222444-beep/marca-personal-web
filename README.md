@@ -211,3 +211,85 @@ MIT License - Libre para usar y modificar
 **Hecho con ❤️ desde Perú 🇵🇪**
 
 *Estudiante de Economía | PUCP | Emprendedor Digital*
+
+
+---
+
+## 🎨 GUÍA DE EDICIÓN - PERSONALIZA TU WEB FÁCILMENTE
+
+### 🚀 CÓMO EDITAR
+
+Todos los textos, fotos y personalizaciones tienen **comentarios claros** en el código para que sea fácil.
+
+### 📝 QUÉ EDITAR EN CADA ARCHIVO:
+
+#### **index.html** (Contenido y estructura)
+```
+Busca estos comentarios y personaliza:
+- "EDITA AQUÍ: Tu nombre/marca" → Tu marca personal
+- "EDITA AQUÍ: Tu foto de perfil" → Agrega tu foto
+- "EDITA AQUÍ: Título principal" → Tu presentación
+- "EDITA AQUÍ: Tu historia/bio" → Sobre ti
+- "EDITA AQUÍ: Tus habilidades" → Skills
+- "EDITA AQUÍ: PRODUCTO" → Tus productos/ebooks
+- "EDITA AQUÍ: TESTIMONIO" → Testimonios
+- "EDITA AQUÍ: REDES SOCIALES" → Tus links
+```
+
+#### **styles.css** (Colores y diseño)
+```
+Busca :root {
+  --primary: #2563eb;      👈 Color principal (azul)
+  --secondary: #7c3aed;    👈 Color secundario (púrpura)
+  --accent: #f97316;       👈 Color destacado (naranja)
+}
+```
+
+#### **script.js** (Funcionalidad)
+Puedes dejar como está, tiene animaciones automáticas.
+
+### 🔧 PASOS PARA PERSONALIZAR:
+
+1. **Abre el archivo en GitHub:**
+   - Ve a `index.html` → Click el lápiz (🔊)
+
+2. **Busca y reemplaza:**
+   - `ctrl+f` (buscar) → "EDITA AQUÍ"
+   - Cambia el contenido
+   - Busca el siguiente comentario
+
+3. **Guarda los cambios:**
+   - "Commit changes"
+   - Tu web se actualiza en 1-2 minutos
+
+### 🖌️ EJEMPLOS RÁPIDOS:
+
+**Cambiar tu nombre:**
+```html
+<!-- BUSCA ESTO: -->
+<span class="logo-text">Mi Marca</span> <!-- 👈 CAMBIA ESTO -->
+<!-- ESCRIBE: -->
+<span class="logo-text">Juan Pérez</span>
+```
+
+**Cambiar tu foto:**
+```html
+<!-- BUSCA ESTO: -->
+<img src="https://via.placeholder.com/400x400?text=Tu+Foto" ...> <!-- 👈 REEMPLAZA CON TU FOTO -->
+<!-- ESCRIBE LA URL DE TU FOTO: -->
+<img src="https://mi-sitio.com/foto.jpg" ...>
+```
+
+**Cambiar colores:**
+```css
+/* Abre styles.css y busca :root { */
+--primary: #2563eb;   /* Cambia a: #FF0000 para rojo, #00FF00 para verde, etc */
+```
+
+### 📧 NECESITAS AYUDA?
+
+- Todos los comentarios están en el código
+- Busca "EDITA AQUÍ" para encontrar qué cambiar
+- Los emojis 👈 te muestran exactamente dónde hacer cambios
+
+---
