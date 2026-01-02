@@ -12,271 +12,306 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-icon">✨</span>
-                <span class="logo-text">Mi Marca</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Inicio</a></li>
-                <li><a href="#book" class="nav-link">Mi Libro</a></li>
-                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="#products" class="nav-link">Productos</a></li>
-                <li><a href="#contact" class="nav-link">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">Hola, soy tu compañero de aprendizaje</h1>
-                <p class="hero-subtitle">Estudiante PUCP • Economista • Emprendedor Digital • Gamer NBA2K/Fortnite</p>
-                <p class="hero-description">Creo contenido educativo sobre economía, emprendimiento y educación financiera desde Ayacucho & Ica, Perú.</p>
-                <div class="hero-buttons">
-                    <a href="#book" class="btn btn-primary">Descubre mi primer libro</a>
-                    <a href="#contact" class="btn btn-secondary">Contacta conmigo</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/400x400?text=Tu+Foto" alt="Foto de perfil" class="profile-img">
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="chevron"></div>
-        </div>
-    </section>
+<!-- ======================================
+     GUÍA DE EDICIÓN - LEE ESTO PRIMERO
+     ======================================
+     
+     🎯 PARA EDITAR:
+     
+     1. TU NOMBRE/MARCA: Busca "Mi Marca" (línea 20 y otras)
+     2. FOTO DE PERFIL: Busca src="https://via.placeholder.com/400x400" (línea ~80)
+     3. TEXTOS DEL HERO: Busca "Hola, soy tu compañero..." (línea ~85)
+     4. SECCIÓN "SOBRE MÍ": Busca id="about" (línea ~140)
+     5. PRODUCTOS: Busca id="products" (línea ~180)
+     6. REDES SOCIALES: Busca id="contact" (línea ~250)
+     7. TESTIMONIOS: Busca id="testimonials" (línea ~280)
+     8. COLORES: Abre styles.css y edita :root (línea 1-13)
+     
+     ====================================== -->
 
-    <!-- BOOK ANNOUNCEMENT SECTION -->
-    <section id="book" class="book-section">
-        <div class="book-announcement">
-            <div class="announcement-badge">🎉 NUEVO</div>
-            <h2 class="book-title">¡MI PRIMER LIBRO CREADO!</h2>
-            <p class="book-subtitle">Aprende sobre los riesgos reales de apuestas, casinos y trading</p>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- EDITA AQUÍ: Tu nombre/marca (aparece en la esquina superior izquierda) -->
+        <div class="logo">
+            <span class="logo-icon">✨</span>
+            <span class="logo-text">Mi Marca</span> <!-- 👈 CAMBIA ESTO A TU NOMBRE -->
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Inicio</a></li>
+            <li><a href="#book" class="nav-link">Mi Libro</a></li>
+            <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+            <li><a href="#products" class="nav-link">Productos</a></li>
+            <li><a href="#contact" class="nav-link">Contacto</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <!-- EDITA AQUÍ: Título principal (el texto grande de bienvenida) -->
+            <h1 class="hero-title">Hola, soy tu compañero de aprendizaje</h1>
             
-            <div class="book-container">
-                <div class="book-cover">
-                    <img src="https://via.placeholder.com/300x400?text=Portada+del+Libro" alt="Portada del libro">
-                    <div class="book-shine"></div>
-                </div>
-                <div class="book-details">
-                    <h3>"Riesgos Financieros: Guía Completa"</h3>
-                    <p class="book-description">
-                        Un ebook completo que analiza los peligros del juego compulsivo, los riesgos del trading sin educación y cómo construir verdadera riqueza mediante educación financiera.
-                    </p>
-                    <div class="book-features">
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Análisis profundo de casos reales</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Estrategias de educación financiera</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Herramientas prácticas aplicables</span>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-primary btn-large">Comprar en Hotmart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>De Ayacucho/Ica al Mundo Digital</h3>
-                    <p>Soy estudiante de Economía en la Pontificia Universidad Católica del Perú (PUCP), apasionado por entender cómo funcionan los mercados, las finanzas y la economía real.</p>
-                    <p>Mi viaje como emprendedor digital comenzó cuando decidí compartir mis conocimientos sobre finanzas y educación financiera a través de ebooks en Hotmart. Creo que la educación es la mejor inversión.</p>
-                    <p>Cuando no estoy estudiando o creando contenido, disfruto jugando NBA 2K25 y Fortnite. Combino mi pasión por los videojuegos con el análisis de probabilidades y riesgos.</p>
-                    <div class="about-skills">
-                        <div class="skill-badge">Economía</div>
-                        <div class="skill-badge">Matemáticas</div>
-                        <div class="skill-badge">Emprendimiento</div>
-                        <div class="skill-badge">Educación Financiera</div>
-                        <div class="skill-badge">Content Creation</div>
-                        <div class="skill-badge">Python</div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/400x500?text=Banner+Personal" alt="Banner personal">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS SECTION -->
-    <section id="products" class="products">
-        <h2 class="section-title">Mis Productos Digitales</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">📚</div>
-                <h3>Riesgos Financieros: Guía Completa</h3>
-                <p>Análisis profundo sobre apuestas, casinos y trading.</p>
-                <span class="product-price">S/. 29.90</span>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">💰</div>
-                <h3>Educación Financiera 101</h3>
-                <p>Conceptos básicos para construir riqueza desde cero.</p>
-                <span class="product-price">S/. 19.90</span>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">📊</div>
-                <h3>Trading Seguro: Basados en Datos</h3>
-                <p>Cómo empezar en trading sin arriesgar tu dinero.</p>
-                <span class="product-price">S/. 39.90</span>
-                <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Conectemos</h2>
-        <p class="contact-subtitle">Sígueme en mis redes sociales o contáctame directamente</p>
-        
-        <div class="contact-methods">
-            <a href="https://instagram.com" target="_blank" class="contact-card instagram">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="contact-card linkedin">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-            </a>
-            <a href="mailto:tu@email.com" class="contact-card email">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-            </a>
-            <a href="https://wa.me/1234567890" target="_blank" class="contact-card whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-        </div>
-        <!-- SHOWCASE SECTION TIPO APPLE -->
-    <section class="showcase">
-        <h2 class="section-title">Mis Especialidades</h2>
-        
-        <div class="showcase-grid">
-            <div class="showcase-card" data-aos="fade-up">
-                <div class="showcase-icon">📚</div>
-                <h3>Educación Financiera</h3>
-                <p>Enseño conceptos complejos de manera simple y aplicable a tu vida diaria.</p>
-            </div>
+            <!-- EDITA AQUÍ: Subtítulo (tu profesión/especialidades) -->
+            <p class="hero-subtitle">Estudiante PUCP • Economista • Emprendedor Digital • Gamer NBA2K/Fortnite</p>
             
-            <div class="showcase-card" data-aos="fade-up">
-                <div class="showcase-icon">🎉</div>
-                <h3>Emprendimiento Digital</h3>
-                <p>Crea tu propio negocio online desde cero con estrategias probadas.</p>
-            </div>
+            <!-- EDITA AQUÍ: Descripción breve -->
+            <p class="hero-description">Creo contenido educativo sobre economía, emprendimiento y educación financiera desde Ayacucho & Ica, Perú.</p>
             
-            <div class="showcase-card" data-aos="fade-up">
-                <div class="showcase-icon">📋</div>
-                <h3>Content Creation</h3>
-                <p>Produce contenido de calidad que engage y convierte audiencias.</p>
-            </div>
-            
-            <div class="showcase-card" data-aos="fade-up">
-                <div class="showcase-icon">🤖</div>
-                <h3>Análisis de Datos</h3>
-                <p>Usa datos para tomar decisiones inteligentes en tu negocio.</p>
-            </div>
-        </
-
-    <!-- STATISTICS SECTION -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <h2 class="section-title">Mi Impacto</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Estudiantes Activos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15</div>
-                    <div class="stat-label">Ebooks Creados</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4.9/5</div>
-                    <div class="stat-label">Rating Promedio</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">95%</div>
-                    <div class="stat-label">Satisfacción</div>
-                </div>
+            <div class="hero-buttons">
+                <a href="#book" class="btn btn-primary">Descubre mi primer libro</a>
+                <a href="#contact" class="btn btn-secondary">Contacta conmigo</a>
             </div>
         </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section">
-        <div class="testimonials-container">
-            <h2 class="section-title">Lo que Dicen de Mí</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Su ebook sobre educación financiera cambió mi perspectiva del dinero. Ahora invierto de forma inteligente."</p>
-                    <div class="testimonial-author">- Juan Pérez, Economista</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Muy bien explicado. Los conceptos complejos se entienden de forma sencilla y práctica."</p>
-                    <div class="testimonial-author">- María Gómez, Emprendedora</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"El mejor contenido sobre trading que he encontrado. Gracias por la honestidad sobre los riesgos."</p>
-                    <div class="testimonial-author">- Carlos López, Inversor</div>
-                </div>
-            </div>
+        <div class="hero-image">
+            <!-- EDITA AQUÍ: Tu foto de perfil -->
+            <img src="https://via.placeholder.com/400x400?text=Tu+Foto" alt="Foto de perfil" class="profile-img"> <!-- 👈 REEMPLAZA CON TU FOTO -->
         </div>
-    </section>
-
-    <!-- CTA FINAL SECTION -->
-    <section class="cta-final-section">
-        <div class="cta-content">
-            <h2>¿Listo para Transformar tu Futuro Financiero?</h2>
-            <p>Accede a mis ebooks, aprende de forma inteligente y toma decisiones financieras que cambien tu vida.</p>
-            <div class="cta-buttons">
-                <a href="#book" class="btn btn-primary btn-large">Descubre Mi Primer Libro</a>
-                <a href="#contact" class="btn btn-secondary btn-large">Contacta Conmigo</a>
-            </div>
-        </div>
-    </section>div>
-    </section>
-
+    </div>
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="chevron"></div>
+    </div>
 </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Mi Marca Personal | Creado con ❤️ en Perú 🇵🇪</p>
-            <div class="footer-links">
-                <a href="#">Privacidad</a> • 
-                <a href="#">Términos</a> • 
-                <a href="#">Sitemap</a>
+<!-- LIBRO SECTION -->
+<section id="book" class="book-section">
+    <div class="book-announcement">
+        <span class="announcement-badge">🎉 NUEVO</span>
+        
+        <!-- EDITA AQUÍ: Título del libro -->
+        <h2 class="book-title">¡MI PRIMER LIBRO CREADO!</h2>
+        
+        <!-- EDITA AQUÍ: Descripción corta -->
+        <p class="book-subtitle">Aprende sobre los riesgos reales de apuestas, casinos y trading</p>
+        
+        <div class="book-container">
+            <div class="book-cover">
+                <!-- EDITA AQUÍ: Imagen portada del libro -->
+                <img src="https://via.placeholder.com/300x400?text=Portada+Libro" alt="Portada del libro"> <!-- 👈 CAMBIA POR IMAGEN DE TU LIBRO -->
+            </div>
+            <div class="book-details">
+                <!-- EDITA AQUÍ: Nombre del libro -->
+                <h3>"Riesgos Financieros: Guía Completa"</h3>
+                
+                <!-- EDITA AQUÍ: Descripción del libro -->
+                <p>Un ebook completo que analiza los peligros del juego compulsivo, los riesgos del trading sin educación y cómo construir verdadera riqueza mediante educación financiera.</p>
+                
+                <div class="book-features">
+                    <!-- EDITA AQUÍ: Características del libro (agrega o elimina) -->
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Análisis profundo de casos reales</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Estrategias de educación financiera</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Herramientas prácticas aplicables</span>
+                    </div>
+                </div>
+                
+                <!-- EDITA AQUÍ: Link a tu libro en Hotmart -->
+                <a href="https://hotmart.com/tulink" class="btn btn-primary btn-large">Comprar en Hotmart</a> <!-- 👈 CAMBIA LA URL -->
             </div>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- ABOUT SECTION -->
+<section id="about" class="about">
+    <div class="about-container">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <!-- EDITA AQUÍ: Título de la sección Sobre Mí -->
+                <h3>De Ayacucho/Ica al Mundo Digital</h3>
+                
+                <!-- EDITA AQUÍ: Tu historia/bio (puedes agregar más párrafos) -->
+                <p>Soy estudiante de Economía en la Pontificia Universidad Católica del Perú (PUCP), apasionado por entender cómo funcionan los mercados, las finanzas y la economía real.</p>
+                <p>Mi viaje como emprendedor digital comenzó cuando decidí compartir mis conocimientos sobre finanzas y educación financiera a través de ebooks en Hotmart. Creo que la educación es la mejor inversión.</p>
+                <p>Cuando no estoy estudiando o creando contenido, disfruto jugando NBA 2K25 y Fortnite. Combino mi pasión por los videojuegos con el análisis de probabilidades y riesgos.</p>
+                
+                <!-- EDITA AQUÍ: Tus habilidades/especialidades (agrega o elimina) -->
+                <div class="about-skills">
+                    <span class="skill-badge">Economía</span>
+                    <span class="skill-badge">Matemáticas</span>
+                    <span class="skill-badge">Emprendimiento</span>
+                    <span class="skill-badge">Educación Financiera</span>
+                    <span class="skill-badge">Content Creation</span>
+                    <span class="skill-badge">Python</span>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- EDITA AQUÍ: Imagen para la sección Sobre Mí -->
+                <img src="https://via.placeholder.com/400x400?text=Banner+Personal" alt="Banner personal"> <!-- 👈 CAMBIA POR TU IMAGEN -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section id="products" class="products">
+    <div class="products-grid">
+        <!-- IMPORTANTE: Para agregar más productos, copia un bloque completo de "product-card" -->
+        
+        <!-- PRODUCTO 1: EDITA AQUÍ -->
+        <div class="product-card">
+            <div class="product-icon">📚</div>
+            <h3>Riesgos Financieros: Guía Completa</h3>
+            <p>Análisis profundo sobre apuestas, casinos y trading.</p>
+            <span class="product-price">S/. 29.90</span> <!-- 👈 CAMBIA EL PRECIO -->
+            <a href="https://hotmart.com/tulink" class="btn btn-primary">Comprar</a> <!-- 👈 CAMBIA EL LINK -->
+        </div>
+        
+        <!-- PRODUCTO 2: EDITA AQUÍ -->
+        <div class="product-card">
+            <div class="product-icon">💰</div>
+            <h3>Educación Financiera 101</h3>
+            <p>Conceptos básicos para construir riqueza desde cero.</p>
+            <span class="product-price">S/. 19.90</span> <!-- 👈 CAMBIA EL PRECIO -->
+            <a href="https://hotmart.com/tulink" class="btn btn-primary">Comprar</a> <!-- 👈 CAMBIA EL LINK -->
+        </div>
+        
+        <!-- PRODUCTO 3: EDITA AQUÍ -->
+        <div class="product-card">
+            <div class="product-icon">📊</div>
+            <h3>Trading Seguro: Basados en Datos</h3>
+            <p>Cómo empezar en trading sin arriesgar tu dinero.</p>
+            <span class="product-price">S/. 39.90</span> <!-- 👈 CAMBIA EL PRECIO -->
+            <a href="https://hotmart.com/tulink" class="btn btn-primary">Comprar</a> <!-- 👈 CAMBIA EL LINK -->
+        </div>
+    </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats-section">
+    <h2 class="section-title">Mi Impacto</h2>
+    <!-- EDITA AQUÍ: Números/estadísticas -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Estudiantes Activos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Ebooks Creados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">4.9/5</div>
+            <div class="stat-label">Rating Promedio</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Satisfacción</div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="testimonials" class="testimonials-section">
+    <h2 class="section-title">Lo que Dicen de Mí</h2>
+    <!-- IMPORTANTE: Para agregar más testimonios, copia un bloque completo de "testimonial-card" -->
+    
+    <div class="testimonials-grid">
+        <!-- TESTIMONIO 1: EDITA AQUÍ -->
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <!-- EDITA AQUÍ: Comentario del testimonio -->
+            <p class="testimonial-text">"Su ebook sobre educación financiera cambió mi perspectiva del dinero. Ahora invierto de forma inteligente."</p>
+            <!-- EDITA AQUÍ: Nombre de quien lo dijo -->
+            <p class="testimonial-author">- Juan Pérez, Economista</p>
+        </div>
+        
+        <!-- TESTIMONIO 2: EDITA AQUÍ -->
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Muy bien explicado. Los conceptos complejos se entienden de forma sencilla y práctica."</p>
+            <p class="testimonial-author">- María Gómez, Emprendedora</p>
+        </div>
+        
+        <!-- TESTIMONIO 3: EDITA AQUÍ -->
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"El mejor contenido sobre trading que he encontrado. Gracias por la honestidad sobre los riesgos."</p>
+            <p class="testimonial-author">- Carlos López, Inversor</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+    <h2>Conectemos</h2>
+    <p>Sígueme en mis redes sociales o contáctame directamente</p>
+    
+    <!-- EDITA AQUÍ: Tus redes sociales (agrega o elimina) -->
+    <div class="contact-methods">
+        <!-- INSTAGRAM: Cambia el link -->
+        <a href="https://instagram.com/" class="contact-card" target="_blank"> <!-- 👈 CAMBIA @tuusuario -->
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
+        
+        <!-- LINKEDIN: Cambia el link -->
+        <a href="https://linkedin.com/in/" class="contact-card" target="_blank"> <!-- 👈 CAMBIA /tuusuario -->
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+        
+        <!-- EMAIL: Cambia tu correo -->
+        <a href="mailto:tu@email.com" class="contact-card"> <!-- 👈 CAMBIA A TU EMAIL -->
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        
+        <!-- WHATSAPP: Cambia tu número -->
+        <a href="https://wa.me/1234567890" class="contact-card" target="_blank"> <!-- 👈 CAMBIA EL NÚMERO -->
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+</section>
+
+<!-- CTA FINAL SECTION -->
+<section class="cta-final-section">
+    <div class="cta-content">
+        <!-- EDITA AQUÍ: Título del CTA final -->
+        <h2>¿Listo para Transformar tu Futuro Financiero?</h2>
+        
+        <!-- EDITA AQUÍ: Descripción del CTA -->
+        <p>Accede a mis ebooks, aprende de forma inteligente y toma decisiones financieras que cambien tu vida.</p>
+        
+        <div class="cta-buttons">
+            <a href="#book" class="btn btn-primary btn-large">Descubre Mi Primer Libro</a>
+            <a href="#contact" class="btn btn-secondary btn-large">Contacta Conmigo</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <!-- EDITA AQUÍ: Año y nombre -->
+    <p>© 2026 Mi Marca Personal | Creado con ❤️ en Perú 🇵🇪</p>
+    
+    <!-- EDITA AQUÍ: Enlaces del footer (privacidad, términos, etc) -->
+    <div class="footer-links">
+        <a href="#">Privacidad</a> • 
+        <a href="#">Términos</a> • 
+        <a href="#">Sitemap</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
