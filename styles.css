@@ -144,8 +144,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  animation: fadeInUp 0.8s ease 0.2s both;
-}
+  animation: fadeInUp 0.8s ease 0.2s forwards;}
 
 @keyframes fadeInUp {
   from {
