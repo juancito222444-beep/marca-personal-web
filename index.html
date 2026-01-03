@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marca Personal - Estudiante PUCP Economía, Emprendedor Digital. Ebook sobre riesgos de apuestas, casino y educación financiera.">
-    <title>Mi Marca Personal | PUCP Economista & Emprendedor Digital</title>
+    <meta name="description" content="Marca Personal Premium - PUCP Economía, Emprendedor Digital, Educación Financiera">
+    <title>Mi Marca Personal | PUCP Economista & Emprendedor Digital Premium</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -13,7 +14,8 @@
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#ebook">E-book</a></li>
-            <li><a href="#sobre">Sobre Mí</a></li>
+            <li><a href="#features">Características</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -21,30 +23,32 @@
     <!-- HERO SECTION -->
     <section id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Hola, soy <span class="highlight">tu compañero</span></h1>
-            <p>Estudiante de Economía en PUCP | Emprendedor Digital | Educación Financiera</p>
-            <p style="font-size: 1rem; color: #888; margin-top: 0.5rem;">Desde Ayacucho & Ica, Perú</p>
+            <h1>Hola, soy <span class="highlight">tu compañero financiero</span></h1>
+            <p>Estudiante PUCP | Economía | Emprendedor Digital | Educación Financiera</p>
+            <p class="subtitle">Protegiendo tu dinero desde Ayacucho & Ica, Perú</p>
             <div class="cta-buttons">
                 <a href="#ebook" class="btn btn-primary">Descubre mi E-book</a>
-                <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                <a href="#contacto" class="btn btn-secondary">Contacta conmigo</a>
             </div>
         </div>
+        <div class="floating-element"></div>
     </section>
 
     <!-- FEATURED PRODUCT - E-BOOK -->
     <section id="ebook" class="featured-product">
-        <h2 class="section-title">Mi Primer E-book</h2>
+        <h2 class="section-title">Mi Primer E-book Premium</h2>
         <div class="product-showcase">
             <div class="product-image"></div>
             <div class="product-details">
                 <span class="product-badge">🚨 Educación Financiera</span>
                 <h2>Riesgos de Apuestas, Casino y Trading</h2>
-                <p>Descubre los peligros ocultos de las apuestas deportivas, juegos de casino y trading sin regulación. Una guía completa para proteger tu dinero y tomar decisiones financieras inteligentes.</p>
+                <p>Una guía completa sobre los peligros de las apuestas deportivas, juegos de casino y trading sin regulación. Aprende a proteger tu dinero y tomar decisiones financieras inteligentes.</p>
                 <ul class="features-list">
                     <li>Análisis detallado de riesgos financieros</li>
-                    <li>Estrategias de protección personal</li>
+                    <li>Estrategias de protección personal comprobadas</li>
                     <li>Casos reales y lecciones aprendidas</li>
-                    <li>Guía para finanzas saludables</li>
+                    <li>Guía paso a paso para finanzas saludables</li>
+                    <li>Bonus: Plantillas de presupuesto digital</li>
                 </ul>
                 <div class="price">Disponible en Hotmart</div>
                 <a href="https://hotmart.com" class="btn btn-primary" target="_blank">Comprar Ahora</a>
@@ -52,20 +56,84 @@
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="stats">
+    <!-- STATS SECTION WITH ANIMATED COUNTERS -->
+    <section class="stats" id="stats">
+        <h2 class="section-title-light">Mi Impacto</h2>
         <div class="stats-grid">
             <div class="stat-item">
-                <h3>10+</h3>
-                <p>Años Experiencia</p>
+                <h3 class="counter" data-target="10">0</h3>
+                <p>Años en Educación Financiera</p>
             </div>
             <div class="stat-item">
-                <h3>5000+</h3>
-                <p>Estudiantes Alcanzados</p>
+                <h3 class="counter" data-target="5000">0</h3>
+                <p>Estudiantes Impactados</p>
             </div>
             <div class="stat-item">
-                <h3>100%</h3>
-                <p>Contenido Original</p>
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Recursos Creados</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="100">0</h3>
+                <p>% Satisfacción</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features">
+        <h2 class="section-title">¿Por qué elegirme?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Contenido Especializado</h3>
+                <p>Información verificada y actualizada sobre tendencias financieras actuales</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Enfoque Práctico</h3>
+                <p>No solo teoría: ejercicios, casos reales y soluciones aplicables</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Resultados Rápidos</h3>
+                <p>Ve cambios en tu mentalidad financiera en los primeros días</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Apoyo Directo</h3>
+                <p>Contacto directo para preguntas y seguimiento personalizado</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Actualizaciones Constantes</h3>
+                <p>Nuevos contenidos y recursos mensualmente</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Seguridad Garantizada</h3>
+                <p>Protege tu información y privacidad con protocolos de seguridad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonios">
+        <h2 class="section-title">Lo que dicen mis estudiantes</h2>
+        <div class="testimonios-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Este e-book cambió mi forma de ver las apuestas. Muy recomendado"</p>
+                <p class="author">- Ana M., Lima</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Finalmente entendí los riesgos del trading. Excelente contenido"</p>
+                <p class="author">- Carlos R., Cusco</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"El mejor recurso de educación financiera que he encontrado"</p>
+                <p class="author">- María L., Arequipa</p>
             </div>
         </div>
     </section>
@@ -73,35 +141,35 @@
     <!-- ABOUT SECTION -->
     <section id="sobre" class="about">
         <h2>Sobre Mí</h2>
-        <p>
-            Soy un estudiante apasionado de Economía en la Pontificia Universidad Católica del Perú (PUCP), comprometido con la educación financiera y el emprendimiento digital.
-        </p>
-        <p>
-            Nacido en Ayacucho y con conexiones en Ica, he dedicado mi carrera a entender los mercados financieros, los riesgos asociados a las apuestas y el trading, y cómo podemos tomar decisiones más inteligentes con nuestro dinero.
-        </p>
-        <p>
-            Mi misión es empoderar a jóvenes y adultos con conocimiento financiero sólido, ayudándoles a evitar trampas comunes y construir un futuro económico seguro.
-        </p>
-    </section>
-
-        <!-- CONTACT SECTION -->
-    <section id="contacto" class="contact">
-        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-            <h2>¿Conectemos?</h2>
-            <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem; line-height: 1.8;">
-                ¿Tienes preguntas sobre educación financiera? ¿Te interesa conocer más sobre mi e-book? 
-                <br>Estoy aquí para ayudarte con tu camino hacia la independencia financiera.
+        <div class="about-content">
+            <p>
+                Soy un estudiante apasionado de Economía en PUCP, comprometido con transformar la educación financiera en Perú. Nací en Ayacucho y tengo conexiones en Ica, lo que me ha dado perspectiva única sobre desafíos económicos regionales.
             </p>
-            <p style="font-size: 0.95rem; color: #888; margin-bottom: 2rem;">
-                📧 Envíame un email directamente para conversaciones personalizadas
+            <p>
+                Mi misión es empoderar a jóvenes y adultos con conocimiento financiero sólido, ayudándoles a evitar trampas comunes y construir un futuro económico seguro.
             </p>
-            <a href="mailto:tu-email@gmail.com" class="btn btn-primary" style="font-size: 1rem; padding: 1rem 2.5rem;">Enviar Email</a>
+            <div class="about-stats">
+                <div>📖 10+ años en educación</div>
+                <div>🎓 Especialista en finanzas comportamentales</div>
+                <div>🌍 Alcance regional</div>
+            </div>
         </div>
     </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contacto" class="contact">
+        <div class="contact-content">
+            <h2>¿Conectemos?</h2>
+            <p>¿Tienes preguntas sobre educación financiera? ¿Te interesa conocer más sobre mi e-book?<br>Estoy aquí para ayudarte con tu camino hacia la independencia financiera.</p>
+            <p class="contact-note">📧 Envíame un email directamente para conversaciones personalizadas</p>
+            <a href="mailto:tu-email@gmail.com" class="btn btn-primary btn-large">Enviar Email</a>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Mi Marca Personal. Todos los derechos reservados.</p>
-        <p>Sígueme en mis redes sociales para más contenido de educación financiera.</p>
+        <p>&copy; 2024-2025 Mi Marca Personal. Todos los derechos reservados.</p>
+        <p>Construyendo comunidad de educación financiera desde Ayacucho & Ica, Perú 🇵🇪</p>
     </footer>
 </body>
 </html>
