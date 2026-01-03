@@ -186,3 +186,24 @@ function animateCounters() {
 }
 
 window.addEventListener('load', animateCounters);
+
+// Trigger animations for sections on scroll
+function observeSections() {
+    const sections = document.querySelectorAll('.features, .testimonios, .about, .feature-card, .testimonial-card, .fade-in-text');
+    const observerOptions = { threshold: 0.1 };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = entry.target.classList.contains('fade-in-text')
+                    ? 'fadeInUp 1s ease-out forwards'
+                    : 'slideUp 0.8s ease-out forwards';
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => observer.observe(section));
+}
+
+window.addEventListener('load', observeSections);
