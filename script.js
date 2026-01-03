@@ -155,3 +155,34 @@ forms.forEach(form => {
         }
     });
 });
+
+
+// Animated Counters on Scroll
+function animateCounters() {
+  const counters = document.querySelectorAll('.counter');
+  const observerOptions = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-target'));
+        const increment = target / 50;
+        let current = 0;
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            setTimeout(updateCounter, 30);
+          } else {
+            counter.textContent = target;
+            counter.setAttribute('data-animated', 'true');
+          }
+        };
+        updateCounter();
+      }
+    });
+  }, observerOptions);
+  counters.forEach(counter => observer.observe(counter));
+}
+
+window.addEventListener('load', animateCounters);
