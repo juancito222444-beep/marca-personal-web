@@ -1,5 +1,7 @@
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// Enhanced Website JavaScript - Premium Interactions
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -30,177 +32,126 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Mobile menu toggle
+// Hamburger menu toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+    
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
     });
 }
 
-// Parallax effect on hero section
-const hero = document.querySelector('.hero');
-if (hero) {
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        hero.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-    });
-}
+// Counter animation for stats
+const animateCounter = (element) => {
+    const target = parseInt(element.getAttribute('data-target')) || 0;
+    const duration = 2000;
+    const start = Date.now();
+    
+    const updateCounter = () => {
+        const progress = (Date.now() - start) / duration;
+        if (progress < 1) {
+            const current = Math.floor(target * progress);
+            element.textContent = current + '+';
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target + '+';
+        }
+    };
+    
+    updateCounter();
+};
 
-// Contact form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thanks! I will get back to you soon.');
-        contactForm.reset();
-    });
-}
-
-// Intersection Observer for fade-in animations
+// Intersection Observer for lazy animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('in-view');
+            
+            // Trigger counter animation
+            const counters = entry.target.querySelectorAll('[data-target]');
+            counters.forEach(counter => {
+                if (!counter.hasAttribute('data-animated')) {
+                    counter.setAttribute('data-animated', 'true');
+                    animateCounter(counter);
+                }
+            });
+            
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.product-card, .book-cover').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease';
+// Observe all animatable sections
+document.querySelectorAll('section, .product-card, .testimonial-card').forEach(el => {
     observer.observe(el);
 });
 
-// Add active class to nav links on scroll
-const addActiveClass = () => {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
+// Dark mode support
+const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 };
 
-window.addEventListener('scroll', addActiveClass);
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
 
-console.log('Mi Marca Personal - Sitio web cargado exitosamente!');
-console.log('Hecho con amor desde Peru 🇵🇪');
-
-// Preload images
-window.addEventListener('load', () => {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.style.opacity = '1';
-        img.style.transition = 'opacity 0.5s ease';
-    });
-});
-
-
-// Counter Animation for Stats
-const counters = document.querySelectorAll('.stat-number');
-const speed = 200;
-let hasRun = false;
-
-const runCounter = () => {
-    if (hasRun) return;
-    hasRun = true;
-    
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.innerText.replace(/[^0-9.-]/g, '');
-            const increment = target / speed;
-            let current = 0;
-            
-            const incrementCounter = () => {
-                current += increment;
-                if (current < target) {
-                    counter.innerText = current.toFixed(1).replace(/\.0$/, '');
-                    setTimeout(incrementCounter, 10);
-                } else {
-                    counter.innerText = counter.innerText;
-                }
-            };
-            incrementCounter();
-        };
-        updateCount();
-    });
-};
-
-// Trigger counter when stats section is visible
+// Smooth parallax on scroll
 window.addEventListener('scroll', () => {
-    const statsSection = document.querySelector('.stats-section');
-    if (statsSection) {
-        const rect = statsSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-            runCounter();
-        }
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        const scrollPosition = window.scrollY;
+        hero.style.backgroundPosition = `0 ${scrollPosition * 0.5}px`;
     }
 });
 
-// Scroll Progress Indicator
-const progressBar = document.createElement('div');
-progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
-    width: 0%;
-    z-index: 9999;
-    transition: width 0.1s ease;
-`;
-document.body.appendChild(progressBar);
-
-window.addEventListener('scroll', () => {
-    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = window.pageYOffset;
-    const progress = (scrolled / windowHeight) * 100;
-    progressBar.style.width = progress + '%';
+// Ripple effect on buttons
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    });
 });
 
-// Enhanced animations on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.stat-card, .testimonial-card, .product-card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    elements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease';
-        observer.observe(el);
+// Page load animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// Prevent multiple form submissions
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+    form.addEventListener('submit', function() {
+        const submitBtn = this.querySelector('[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+        }
     });
-};
-
-animateOnScroll();
-
-console.log('%c🚀 Mi Marca Personal - PREMIUM VERSION', 'color: #2563eb; font-size: 20px; font-weight: bold');
-console.log('%cWeb creada con amor desde Perú 🇵🇪', 'color: #7c3aed; font-size: 14px');
+});
