@@ -207,3 +207,128 @@ function observeSections() {
 }
 
 window.addEventListener('load', observeSections);
+
+
+// ========== STORE & PAYMENT FUNCTIONALITY ==========
+
+// Get store elements
+const storeModal = document.getElementById('storeModal');
+const openStoreBtn = document.getElementById('openStoreBtn');
+const closeStoreBtn = document.getElementById('closeStoreBtn');
+
+// Payment option elements
+const yapeRadio = document.getElementById('yapeRadio');
+const bcpRadio = document.getElementById('bcpRadio');
+const yapeDetails = document.querySelector('.yape-details');
+const bcpDetails = document.querySelector('.bcp-details');
+const yapeOption = document.getElementById('yapeOption');
+const bcpOption = document.getElementById('bcpOption');
+
+// Confirmation checkboxes
+const yapeConfirm = document.getElementById('yapeConfirm');
+const bcpConfirm = document.getElementById('bcpConfirm');
+const yapeSubmitBtn = document.querySelector('.yape-submit');
+const bcpSubmitBtn = document.querySelector('.bcp-submit');
+
+// Open store modal
+if (openStoreBtn) {
+    openStoreBtn.addEventListener('click', () => {
+        storeModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+}
+
+// Close store modal
+if (closeStoreBtn) {
+    closeStoreBtn.addEventListener('click', () => {
+        storeModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    });
+}
+
+// Close modal when clicking outside
+if (storeModal) {
+    storeModal.addEventListener('click', (e) => {
+        if (e.target === storeModal) {
+            storeModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Handle payment method selection - Yape
+if (yapeRadio) {
+    yapeRadio.addEventListener('change', () => {
+        yapeDetails.classList.remove('hidden');
+        bcpDetails.classList.add('hidden');
+    });
+}
+
+// Handle payment method selection - BCP
+if (bcpRadio) {
+    bcpRadio.addEventListener('change', () => {
+        bcpDetails.classList.remove('hidden');
+        yapeDetails.classList.add('hidden');
+    });
+}
+
+// Handle Yape confirmation
+if (yapeConfirm) {
+    yapeConfirm.addEventListener('change', () => {
+        if (yapeSubmitBtn) {
+            yapeSubmitBtn.disabled = !yapeConfirm.checked;
+        }
+    });
+}
+
+// Handle BCP confirmation
+if (bcpConfirm) {
+    bcpConfirm.addEventListener('change', () => {
+        if (bcpSubmitBtn) {
+            bcpSubmitBtn.disabled = !bcpConfirm.checked;
+        }
+    });
+}
+
+// Copy to clipboard functionality
+const copyButtons = document.querySelectorAll('.copy-btn');
+copyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const textToCopy = button.getAttribute('data-copy');
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalText = button.textContent;
+            button.textContent = '✓ Copiado';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        });
+    });
+});
+
+// Handle Yape submit button
+if (yapeSubmitBtn) {
+    yapeSubmitBtn.addEventListener('click', () => {
+        if (yapeConfirm.checked) {
+            alert('✓ ¡Pago verificado! Tu acceso al e-book será activado pronto.\nVerifica tu email para más detalles.');
+            storeModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            yapeRadio.checked = false;
+            yapeConfirm.checked = false;
+            yapeDetails.classList.add('hidden');
+            yapeSubmitBtn.disabled = true;
+        }
+    });
+}
+
+// Handle BCP submit button (opens WhatsApp)
+if (bcpSubmitBtn) {
+    bcpSubmitBtn.addEventListener('click', (e) => {
+        if (!bcpConfirm.checked) {
+            e.preventDefault();
+            return false;
+        }
+    });
+}
+
+console.log('Store functionality loaded successfully');
