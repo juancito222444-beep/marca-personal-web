@@ -593,3 +593,456 @@ footer a:hover {
         transform: translateY(-10px);
     }
 }
+
+
+/* ========== MODAL & STORE STYLES ========== */
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text);
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+    opacity: 1;
+}
+
+.store-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.store-header h2 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.store-subtitle {
+    color: var(--secondary);
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+}
+
+.store-product-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.store-product-image {
+    width: 100px;
+    height: 130px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.store-product-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text);
+}
+
+.store-product-description {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    margin: 0.5rem 0;
+}
+
+.store-price {
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.payment-methods {
+    margin: 2rem 0;
+}
+
+.payment-methods h3 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.payment-option {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.payment-option:has(:checked) {
+    border-color: var(--primary);
+    background-color: rgba(7, 113, 227, 0.05);
+}
+
+.payment-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.payment-radio {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.payment-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.payment-icon {
+    font-size: 1.5rem;
+}
+
+.payment-name {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.payment-time {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    margin-left: auto;
+}
+
+.payment-details {
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    transition: opacity 0.2s;
+}
+
+.payment-details.hidden {
+    display: none;
+}
+
+.payment-instruction {
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 1rem 0;
+}
+
+.qr-container {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.qr-code {
+    max-width: 150px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.yape-info-box {
+    background: #ffebee;
+    border-left: 4px solid #e91e63;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.yape-info-box p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.bank-account-box {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.account-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.account-field:last-child {
+    border-bottom: none;
+}
+
+.account-field label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.account-value {
+    font-family: 'Courier New', monospace;
+    background: #f5f5f5;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    margin: 0 0.5rem;
+}
+
+.copy-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.copy-btn:hover {
+    opacity: 0.8;
+}
+
+.bcp-info-box {
+    background: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.bcp-info-box p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.confirmation-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.confirm-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.confirm-label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+.btn-success {
+    background-color: var(--success) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.7rem 1.2rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: opacity 0.2s !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.btn-success:hover:not(:disabled) {
+    opacity: 0.9 !important;
+}
+
+.btn-success:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.security-info {
+    background: #e8f5e9;
+    border: 1px solid #4caf50;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #2e7d32;
+}
+
+.btn-large {
+    width: 100%;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+}
+
+/* Product Showcase Updates */
+.product-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.product-image {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 12px;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.product-details h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--text);
+}
+
+.product-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--secondary);
+    font-size: 0.95rem;
+}
+
+.features-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.price-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .store-product-card {
+        flex-direction: column;
+    }
+
+    .store-product-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .payment-label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .payment-time {
+        margin-left: 0;
+        font-size: 0.75rem;
+    }
+}
