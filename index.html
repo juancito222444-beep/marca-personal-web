@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marca Personal Premium - PUCP Economía, Emprendedor Digital, Educación Financiera">
+    <meta name="description" content="Marca Personal Premium – PUCP Economista, Emprendedor Digital, Educación Financiera">
     <title>Mi Marca Personal | PUCP Economista & Emprendedor Digital Premium</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -24,7 +24,7 @@
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Hola, soy <span class="highlight">tu compañero financiero</span></h1>
-            <p>Estudiante PUCP | Economía | Emprendedor Digital | Educación Financiera</p>
+            <p class="subtitle">Estudiante PUCP | Economía | Emprendedor Digital | Educación Financiera</p>
             <p class="subtitle">Protegiendo tu dinero desde Ayacucho & Ica, Perú</p>
             <div class="cta-buttons">
                 <a href="#ebook" class="btn btn-primary">Descubre mi E-book</a>
@@ -34,14 +34,14 @@
         <div class="floating-element"></div>
     </section>
 
-    <!-- FEATURED PRODUCT - E-BOOK -->
+    <!-- FEATURED PRODUCT - E-BOOK STORE -->
     <section id="ebook" class="featured-product">
         <h2 class="section-title">Mi Primer E-book Premium</h2>
         <div class="product-showcase">
             <div class="product-image"></div>
             <div class="product-details">
-                <span class="product-badge">🚨 Educación Financiera</span>
-                <h2>Riesgos de Apuestas, Casino y Trading</h2>
+                <span class="product-badge">🚀 Educación Financiera</span>
+                <h3>¿Riesgos de Apuestas, Casino y Trading sin regulación.</h3>
                 <p>Una guía completa sobre los peligros de las apuestas deportivas, juegos de casino y trading sin regulación. Aprende a proteger tu dinero y tomar decisiones financieras inteligentes.</p>
                 <ul class="features-list">
                     <li>Análisis detallado de riesgos financieros</li>
@@ -50,126 +50,182 @@
                     <li>Guía paso a paso para finanzas saludables</li>
                     <li>Bonus: Plantillas de presupuesto digital</li>
                 </ul>
-                <div class="price">Disponible en Hotmart</div>
-                <a href="https://hotmart.com" class="btn btn-primary" target="_blank">Comprar Ahora</a>
+                <div class="price-section">
+                    <p class="price">S/ 29.90</p>
+                    <button id="openStoreBtn" class="btn btn-primary btn-large">Comprar Ahora │ Tienda Online</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS SECTION WITH ANIMATED COUNTERS -->
-    <section class="stats" id="stats">
-        <h2 class="section-title-light">Mi Impacto</h2>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3 class="counter" data-target="10">0</h3>
-                <p>Años en Educación Financiera</p>
+    <!-- STORE MODAL -->
+    <div id="storeModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeStoreBtn">&times;</button>
+            
+            <!-- Store Header -->
+            <div class="store-header">
+                <h2>Tienda Premium</h2>
+                <p class="store-subtitle">Compra segura con métodos de pago locales</p>
             </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="5000">0</h3>
-                <p>Estudiantes Impactados</p>
+
+            <!-- Product Card in Store -->
+            <div class="store-product-card">
+                <div class="store-product-image"></div>
+                <div class="store-product-info">
+                    <h3>¿Riesgos de Apuestas, Casino y Trading?</h3>
+                    <p class="store-product-description">Guía completa sobre protección financiera y educación en apuestas. Aprende de expertos y toma decisiones inteligentes.</p>
+                    <div class="store-price">S/ 29.90</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="15">0</h3>
-                <p>Recursos Creados</p>
+
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <h3>Elige tu método de pago</h3>
+                
+                <!-- YAPE Payment Option -->
+                <div class="payment-option yape-option" id="yapeOption">
+                    <div class="payment-header">
+                        <input type="radio" name="paymentMethod" value="yape" id="yapeRadio" class="payment-radio">
+                        <label for="yapeRadio" class="payment-label">
+                            <span class="payment-icon">📱</span>
+                            <span class="payment-name">Yape (QR Code)</span>
+                            <span class="payment-time">Instantáneo</span>
+                        </label>
+                    </div>
+                    <div class="payment-details yape-details hidden">
+                        <p class="payment-instruction">Escanea este código QR con tu app de Yape:</p>
+                        <div class="qr-container">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23fff' width='200' height='200'/%3E%3Ctext x='50%' y='50%' font-size='14' text-anchor='middle' dominant-baseline='middle' fill='%23000'%3E[QR CODE YAPE]%3C/text%3E%3C/svg%3E" alt="Yape QR Code" class="qr-code">
+                        </div>
+                        <div class="yape-info-box">
+                            <p><strong>Móvil:</strong> +51 987654321</p>
+                            <p><strong>Monto:</strong> S/ 29.90</p>
+                            <p class="instruction-text">1. Abre tu app de Yape<br>
+                            2. Selecciona "Escanear QR"<br>
+                            3. Captura el código<br>
+                            4. Confirma el pago</p>
+                        </div>
+                        <div class="confirmation-section">
+                            <input type="checkbox" id="yapeConfirm" class="confirm-checkbox">
+                            <label for="yapeConfirm" class="confirm-label">Confirmé que realicé el pago</label>
+                            <button class="btn btn-success yape-submit" disabled>✓ Verificar Pago</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BCP Payment Option -->
+                <div class="payment-option bcp-option" id="bcpOption">
+                    <div class="payment-header">
+                        <input type="radio" name="paymentMethod" value="bcp" id="bcpRadio" class="payment-radio">
+                        <label for="bcpRadio" class="payment-label">
+                            <span class="payment-icon">🏦</span>
+                            <span class="payment-name">BCP - Transferencia Bancaria</span>
+                            <span class="payment-time">1-2 horas</span>
+                        </label>
+                    </div>
+                    <div class="payment-details bcp-details hidden">
+                        <p class="payment-instruction">Realiza una transferencia a esta cuenta BCP:</p>
+                        <div class="bank-account-box">
+                            <div class="account-field">
+                                <label>Titularde Cuenta:</label>
+                                <span class="account-value">JUAN CARLOS PUNO FLORES</span>
+                                <button class="copy-btn" data-copy="JUAN CARLOS PUNO FLORES">Copiar</button>
+                            </div>
+                            <div class="account-field">
+                                <label>Número de Cuenta:</label>
+                                <span class="account-value">123456789</span>
+                                <button class="copy-btn" data-copy="123456789">Copiar</button>
+                            </div>
+                            <div class="account-field">
+                                <label>Número de Operación:</label>
+                                <span class="account-value">XXXXXXXX</span>
+                                <button class="copy-btn" data-copy="XXXXXXXX">Copiar</button>
+                            </div>
+                            <div class="account-field">
+                                <label>Monto a Transferir:</label>
+                                <span class="account-value">S/ 29.90</span>
+                            </div>
+                        </div>
+                        <div class="bcp-info-box">
+                            <p><strong>Instrucciones:</strong></p>
+                            <p>1. Ingresa a tu banco en línea (BCP web o app)<br>
+                            2. Selecciona "Transferencias"<br>
+                            3. Rellena con los datos de arriba<br>
+                            4. Realiza la transferencia<br>
+                            5. Envía el comprobante por WhatsApp</p>
+                        </div>
+                        <div class="confirmation-section">
+                            <input type="checkbox" id="bcpConfirm" class="confirm-checkbox">
+                            <label for="bcpConfirm" class="confirm-label">Realicé la transferencia BCP</label>
+                            <a href="https://wa.me/51987654321?text=Acabo%20de%20realizar%20la%20transferencia%20BCP%20para%20el%20e-book.%20Adjunto%20comprobante." target="_blank" class="btn btn-success bcp-submit" disabled>📄 Enviar Comprobante por WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="100">0</h3>
-                <p>% Satisfacción</p>
+
+            <!-- Security Info -->
+            <div class="security-info">
+                <p>🔒 Tus datos de pago son seguros. No guardamos información sensible.</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- FEATURES SECTION -->
     <section id="features" class="features">
-        <h2 class="section-title">¿Por qué elegirme?</h2>
+        <h2 class="section-title">Características Principales</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Contenido Especializado</h3>
-                <p>Información verificada y actualizada sobre tendencias financieras actuales</p>
+                <div class="feature-icon">📊</div>
+                <h3>Análisis Profundo</h3>
+                <p>Investigación detallada sobre riesgos financieros y apuestas en línea.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Estrategias Probadas</h3>
+                <p>Técnicas comprobadas para proteger tu dinero y tomar mejores decisiones.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎯</div>
-                <h3>Enfoque Práctico</h3>
-                <p>No solo teoría: ejercicios, casos reales y soluciones aplicables</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Resultados Rápidos</h3>
-                <p>Ve cambios en tu mentalidad financiera en los primeros días</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌟</div>
-                <h3>Apoyo Directo</h3>
-                <p>Contacto directo para preguntas y seguimiento personalizado</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Actualizaciones Constantes</h3>
-                <p>Nuevos contenidos y recursos mensualmente</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Seguridad Garantizada</h3>
-                <p>Protege tu información y privacidad con protocolos de seguridad</p>
+                <h3>Casos Reales</h3>
+                <p>Historias verdaderas de personas que aprendieron sobre finanzas responsables.</p>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="testimonios">
-        <h2 class="section-title">Lo que dicen mis estudiantes</h2>
-        <div class="testimonios-grid">
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonios" class="testimonials">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonials-grid">
             <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Este e-book cambió mi forma de ver las apuestas. Muy recomendado"</p>
-                <p class="author">- Ana M., Lima</p>
+                <p class="testimonial-text">"Este e-book cambió mi perspectiva sobre las finanzas. Muy recomendado."</p>
+                <p class="testimonial-author">- Estudiante PUCP</p>
             </div>
             <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"Finalmente entendí los riesgos del trading. Excelente contenido"</p>
-                <p class="author">- Carlos R., Cusco</p>
+                <p class="testimonial-text">"Clara, concisa y muy útil. Excelente contenido para principiantes."</p>
+                <p class="testimonial-author">- Profesional Joven</p>
             </div>
             <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p>"El mejor recurso de educación financiera que he encontrado"</p>
-                <p class="author">- María L., Arequipa</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="sobre" class="about">
-        <h2>Sobre Mí</h2>
-        <div class="about-content">
-            <p>
-                Soy un estudiante apasionado de Economía en PUCP, comprometido con transformar la educación financiera en Perú. Nací en Ayacucho y tengo conexiones en Ica, lo que me ha dado perspectiva única sobre desafíos económicos regionales.
-            </p>
-            <p>
-                Mi misión es empoderar a jóvenes y adultos con conocimiento financiero sólido, ayudándoles a evitar trampas comunes y construir un futuro económico seguro.
-            </p>
-            <div class="about-stats">
-                <div>📖 10+ años en educación</div>
-                <div>🎓 Especialista en finanzas comportamentales</div>
-                <div>🌍 Alcance regional</div>
+                <p class="testimonial-text">"Finalmente entiendo cómo proteger mi dinero. Gracias por la guía."</p>
+                <p class="testimonial-author">- Emprendedor</p>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contacto" class="contact">
-        <div class="contact-content">
-            <h2>¿Conectemos?</h2>
-            <p>¿Tienes preguntas sobre educación financiera? ¿Te interesa conocer más sobre mi e-book?<br>Estoy aquí para ayudarte con tu camino hacia la independencia financiera.</p>
-            <p class="contact-note">📧 Envíame un email directamente para conversaciones personalizadas</p>
-            <a href="mailto:tu-email@gmail.com" class="btn btn-primary btn-large">Enviar Email</a>
+        <h2 class="section-title">Contacto</h2>
+        <p>Si tienes preguntas o necesitas más información, no dudes en contactarme.</p>
+        <div class="contact-links">
+            <a href="https://wa.me/51987654321" class="btn btn-primary">WhatsApp</a>
+            <a href="mailto:correo@ejemplo.com" class="btn btn-secondary">Email</a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024-2025 Mi Marca Personal. Todos los derechos reservados.</p>
-        <p>Construyendo comunidad de educación financiera desde Ayacucho & Ica, Perú 🇵🇪</p>
+        <p>&copy; 2025 Mi Marca Personal. Todos los derechos reservados.</p>
+        <p>Educación financiera responsable para un futuro mejor.</p>
     </footer>
 </body>
 </html>
