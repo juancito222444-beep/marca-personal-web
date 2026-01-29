@@ -538,3 +538,95 @@ if (document.readyState === 'loading') {
 // ========================================
 // END PREMIUM ANIMATIONS
 // ========================================
+
+// ========================================
+// WEALTH PORTAL MODE TOGGLE
+// ========================================
+
+function initWealthPortalMode() {
+  // Check for saved preference
+  const wealthMode = localStorage.getItem('wealthPortalMode');
+  
+  if (wealthMode === 'enabled') {
+    document.body.classList.add('wealth-portal-mode');
+    applyWealthStyles();
+  }
+  
+  // Add to dark mode toggle to include wealth mode
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (themeToggle) {
+    // Long press for wealth mode
+    let pressTimer;
+    
+    themeToggle.addEventListener('mousedown', () => {
+      pressTimer = setTimeout(() => {
+        toggleWealthMode();
+      }, 1000); // 1 second hold
+    });
+    
+    themeToggle.addEventListener('mouseup', () => {
+      clearTimeout(pressTimer);
+    });
+    
+    themeToggle.addEventListener('mouseleave', () => {
+      clearTimeout(pressTimer);
+    });
+  }
+}
+
+function toggleWealthMode() {
+  document.body.classList.toggle('wealth-portal-mode');
+  
+  if (document.body.classList.contains('wealth-portal-mode')) {
+    localStorage.setItem('wealthPortalMode', 'enabled');
+    applyWealthStyles();
+    alert('✨ Wealth Portal Mode Activated!\n\nFondo negro, botones dorados y animaciones premium activados.');
+  } else {
+    localStorage.setItem('wealthPortalMode', null);
+    removeWealthStyles();
+    alert('✅ Modo normal restaurado');
+  }
+}
+
+function applyWealthStyles() {
+  // Apply wealth-style classes to buttons
+  document.querySelectorAll('.btn-primary').forEach(btn => {
+    if (!btn.classList.contains('wealth-style')) {
+      btn.classList.add('wealth-style');
+    }
+  });
+  
+  // Apply to cards
+  document.querySelectorAll('.feature-card, .testimonial-card').forEach(card => {
+    if (!card.classList.contains('wealth-style')) {
+      card.classList.add('wealth-style');
+    }
+  });
+  
+  // Add fade-in effects
+  document.querySelectorAll('.hero-content > *').forEach((el, index) => {
+    if (!el.classList.contains('wealth-fade-in')) {
+      el.classList.add('wealth-fade-in', `delay-${Math.min(index + 1, 3)}`);
+    }
+  });
+}
+
+function removeWealthStyles() {
+  document.querySelectorAll('.wealth-style, .wealth-fade-in').forEach(el => {
+    el.classList.remove('wealth-style', 'wealth-fade-in', 'delay-1', 'delay-2', 'delay-3');
+  });
+}
+
+// Add to initialization
+if (typeof initPremiumFeatures === 'function') {
+  const originalInit = initPremiumFeatures;
+  initPremiumFeatures = function() {
+    originalInit();
+    initWealthPortalMode();
+    console.log('💰 Wealth Portal Mode ready! (Hold theme button for 1sec)');
+  };
+}
+
+// ========================================
+// END WEALTH PORTAL MODE
+// ========================================
