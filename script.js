@@ -332,3 +332,209 @@ if (bcpSubmitBtn) {
 }
 
 console.log('Store functionality loaded successfully');
+
+// ========================================
+// 🎨 PREMIUM ANIMATIONS - JavaScript
+// ========================================
+
+// DARK MODE TOGGLE
+function initDarkMode() {
+  // Check for saved preference
+  const darkMode = localStorage.getItem('darkMode');
+  
+  if (darkMode === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+  
+  // Create toggle button
+  const toggle = document.createElement('button');
+  toggle.className = 'theme-toggle';
+  toggle.innerHTML = darkMode === 'enabled' ? '☀️' : '🌙';
+  toggle.setAttribute('aria-label', 'Toggle dark mode');
+  document.body.appendChild(toggle);
+  
+  // Toggle function
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+      toggle.innerHTML = '☀️';
+    } else {
+      localStorage.setItem('darkMode', null);
+      toggle.innerHTML = '🌙';
+    }
+  });
+}
+
+// SCROLL REVEAL ANIMATIONS
+function initScrollReveal() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  // Add scroll-reveal class to elements
+  const elements = document.querySelectorAll('.feature-card, .testimonial-card, .section-title, .product-showcase');
+  elements.forEach(el => {
+    el.classList.add('scroll-reveal');
+    observer.observe(el);
+  });
+}
+
+// ANIMATED COUNTER
+function animateCounter(element, target, duration = 2000) {
+  let start = 0;
+  const increment = target / (duration / 16);
+  
+  const timer = setInterval(() => {
+    start += increment;
+    if (start >= target) {
+      element.textContent = Math.ceil(target);
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.ceil(start);
+    }
+  }, 16);
+}
+
+function initCounters() {
+  const counters = document.querySelectorAll('.counter');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = +entry.target.getAttribute('data-target');
+        entry.target.classList.add('counting');
+        animateCounter(entry.target, target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => observer.observe(counter));
+}
+
+// STAGGER ANIMATION FOR LISTS
+function initStaggerAnimation() {
+  const lists = document.querySelectorAll('.features-list li, .flipbook-benefits li');
+  lists.forEach((item, index) => {
+    item.classList.add('stagger-item');
+    item.style.animationDelay = `${index * 0.1}s`;
+  });
+}
+
+// SMOOTH PAGE TRANSITIONS
+function initPageTransitions() {
+  // Fade in on page load
+  window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+      document.body.style.transition = 'opacity 0.5s ease';
+      document.body.style.opacity = '1';
+    }, 100);
+  });
+}
+
+// PARALLAX EFFECT ON MOUSE MOVE
+function initParallax() {
+  const hero = document.querySelector('.hero');
+  
+  if (hero) {
+    document.addEventListener('mousemove', (e) => {
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+      
+      const heroBefore = hero.querySelector('::before');
+      if (heroBefore) {
+        hero.style.setProperty('--mouse-x', `${moveX}px`);
+        hero.style.setProperty('--mouse-y', `${moveY}px`);
+      }
+    });
+  }
+}
+
+// TYPING EFFECT
+function initTypingEffect() {
+  const elements = document.querySelectorAll('.typing-effect');
+  
+  elements.forEach(element => {
+    const text = element.textContent;
+    element.textContent = '';
+    element.style.display = 'inline-block';
+    
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+      } else {
+        clearInterval(timer);
+        // Remove cursor after typing
+        setTimeout(() => {
+          element.style.borderRight = 'none';
+        }, 500);
+      }
+    }, 100);
+  });
+}
+
+// ADD RIPPLE EFFECT TO BUTTONS
+function createRipple(event) {
+  const button = event.currentTarget;
+  const ripple = document.createElement('span');
+  const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const radius = diameter / 2;
+  
+  ripple.style.width = ripple.style.height = `${diameter}px`;
+  ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+  ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+  ripple.classList.add('ripple');
+  
+  const rippleEffect = button.getElementsByClassName('ripple')[0];
+  if (rippleEffect) {
+    rippleEffect.remove();
+  }
+  
+  button.appendChild(ripple);
+}
+
+function initRippleEffect() {
+  const buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', createRipple);
+  });
+}
+
+// INITIALIZE ALL PREMIUM FEATURES
+function initPremiumFeatures() {
+  initDarkMode();
+  initScrollReveal();
+  initCounters();
+  initStaggerAnimation();
+  initPageTransitions();
+  initParallax();
+  initRippleEffect();
+  
+  console.log('🎨 Premium animations loaded successfully!');
+}
+
+// Run when DOM is loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPremiumFeatures);
+} else {
+  initPremiumFeatures();
+}
+
+// ========================================
+// END PREMIUM ANIMATIONS
+// ========================================
