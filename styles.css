@@ -1303,3 +1303,346 @@ footer a:hover {
         aspect-ratio: 3/4;
     }
 }
+
+/* ========================================
+   🎨 MEJORAS PREMIUM - ANIMACIONES AVANZADAS
+   Inspirado en The Wealth Portal
+======================================== */
+
+/* TEMA OSCURO OPCIONAL */
+body.dark-mode {
+  background: #0f1419;
+  color: #ffffff;
+}
+
+body.dark-mode nav {
+  background: rgba(15, 20, 25, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f26 50%, #252c35 100%);
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .testimonial-card,
+body.dark-mode .modal-content {
+  background: #1a1f26;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botón Toggle Tema */
+.theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  z-index: 999;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd700;
+}
+
+/* EFECTO GLOW MEJORADO EN BOTONES */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 113, 227, 0.5);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 15px 40px rgba(0, 113, 227, 0.6);
+  letter-spacing: 1px;
+}
+
+/* GLASSMORPHISM - Efecto Vidrio */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.modal-content {
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .modal-content {
+  background: rgba(26, 31, 38, 0.95);
+}
+
+/* EFECTO PARALLAX MEJORADO */
+.hero::before {
+  animation: parallaxFloat 10s ease-in-out infinite;
+  filter: blur(60px);
+}
+
+@keyframes parallaxFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50px) scale(1.2) rotate(5deg);
+  }
+}
+
+/* HOVER LIFT MEJORADO */
+.feature-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-15px) rotateX(5deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ICONOS CON ANIMACIÓN SPIN */
+.feature-icon {
+  display: inline-block;
+  animation: floatSpin 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(0, 113, 227, 0.5));
+}
+
+@keyframes floatSpin {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    filter: drop-shadow(0 0 15px rgba(0, 113, 227, 0.5));
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    filter: drop-shadow(0 0 25px rgba(255, 107, 53, 0.7));
+  }
+}
+
+/* GRADIENT ANIMADO PARA HERO */
+.hero.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* EFECTO SHIMMER PARA TÍTULOS */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* PULSE MEJORADO PARA BADGES */
+.product-badge {
+  animation: pulseBadge 2s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
+    transform: scale(1.05);
+  }
+}
+
+/* SCROLL REVEAL ANIMATION */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* EFECTO TYPING PARA TEXTOS */
+.typing-effect {
+  overflow: hidden;
+  border-right: 3px solid var(--primary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* CONTADOR ANIMADO */
+.counter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.counter.counting {
+  animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* EFECTO RIPPLE AL HACER CLICK */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* LOADING SPINNER */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 113, 227, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* MEJORAS EN RESPONSIVE */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 80px;
+    right: 20px;
+    font-size: 1.4rem;
+    padding: 0.6rem;
+  }
+  
+  .feature-card:hover,
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .hero::before {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* EFECTO STAGGER PARA ELEMENTOS DE LISTA */
+.stagger-item {
+  animation: staggerFadeIn 0.6s ease-out backwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes staggerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* EFECTO 3D EN PRODUCTOS */
+.product-image {
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-image:hover {
+  transform: perspective(1000px) rotateY(10deg) rotateX(5deg) scale(1.05);
+}
+
+/* ========================================
+   FIN DE MEJORAS PREMIUM
+======================================== */
